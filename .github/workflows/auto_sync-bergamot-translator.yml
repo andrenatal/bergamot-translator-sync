@@ -13,7 +13,9 @@ jobs:
       - name: Reset the default branch with upstream changes
         run: |
           git remote add upstream https://github.com/browsermt/bergamot-translator.git
+          git branch -vv
           git fetch upstream main:upstream-main
+          git branch -vv
           git merge -m "Merge remote-tracking branch 'upstream/main'" upstream/main
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
