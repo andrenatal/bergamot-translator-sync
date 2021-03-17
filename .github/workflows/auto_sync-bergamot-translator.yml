@@ -12,6 +12,8 @@ jobs:
           repository: mozilla/bergamot-translator
       - name: Reset the default branch with upstream changes
         run: |
+          git config --global user.email "anatal@gmail.com"
+          git config --global user.name "Andre Natal"
           git remote add upstream https://github.com/browsermt/bergamot-translator.git
           git branch -vv
           git fetch upstream
