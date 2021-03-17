@@ -9,13 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: mozilla/bergamot-translator
+          repository: andrenatal/bergamot-translator
       - name: Reset the default branch with upstream changes
         run: |
           git remote add upstream https://github.com/browsermt/bergamot-translator.git
           git fetch upstream main:upstream-main
           git reset --hard upstream-main
-          git checkout upstream-main
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
