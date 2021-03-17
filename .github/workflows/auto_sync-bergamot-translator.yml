@@ -17,6 +17,7 @@ jobs:
           git remote add upstream https://github.com/browsermt/bergamot-translator.git
           git branch -vv
           git fetch upstream
+          git pull
           git branch -vv
           git merge -m "Merge remote-tracking branch 'upstream/main'" upstream/main --allow-unrelated-histories
       - name: Create Pull Request
