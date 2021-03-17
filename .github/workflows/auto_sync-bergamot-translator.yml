@@ -16,7 +16,7 @@ jobs:
           git branch -vv
           git fetch upstream
           git branch -vv
-          git merge -m "Merge remote-tracking branch 'upstream/main'" upstream/main
+          git merge -m "Merge remote-tracking branch 'upstream/main'" upstream/main --allow-unrelated-histories
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
