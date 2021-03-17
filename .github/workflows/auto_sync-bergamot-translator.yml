@@ -12,7 +12,7 @@ jobs:
           repository: mozilla/bergamot-translator
       - name: Reset the default branch with upstream changes
         run: |
-          git remote add upstream https://github.com/browsermt/bergamot-translator.get
+          git remote add upstream https://github.com/browsermt/bergamot-translator.git
           git fetch upstream andrenatal-test-autosync:upstream-main
           git reset --hard upstream-main
       - name: Create Pull Request
