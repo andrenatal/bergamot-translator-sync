@@ -1,7 +1,8 @@
 name: Update fork
 on:
-  schedule:
-    - cron:  '0 * * * *'
+  push:
+    branches:
+      - main
 jobs:
   updateFork:
     runs-on: ubuntu-latest
@@ -13,7 +14,7 @@ jobs:
         run: |
           git remote add upstream https://github.com/browsermt/bergamot-translator.git
           git fetch upstream main:upstream-main
-          git reset --hard upstream-main
+          git merge upstream/main
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
